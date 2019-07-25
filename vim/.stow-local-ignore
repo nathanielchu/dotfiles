@@ -1,0 +1,9 @@
+autoload
+backups
+install-ripgrep.sh
+pack
+plugged
+plugins.vim
+README.md
+swaps
+undo
