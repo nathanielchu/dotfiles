@@ -30,15 +30,15 @@ fi
 
 # --- Body ---------------------------------------------------------
 __dir="$(cd "$(dirname "${BASH_SOURCE[${__b3bp_tmp_source_idx:-0}]}")" && pwd)"
+cd "${__dir}"
 
-for d in "${__dir}"/*/ ; do
+BOOTSTRAP="bootstrap.sh"
+for d in */ ; do
     package="$(basename ${d})"
     echo "${package}"
     stow "${package}"
     cd "${d}"
-    if [ -f bootstrap.sh ]; then
-        ./bootstrap.sh
-    fi
+    test -f bootstrap.sh && ./bootstrap.sh
     cd ..
 done
 
