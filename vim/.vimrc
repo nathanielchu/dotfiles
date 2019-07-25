@@ -121,5 +121,5 @@ nnoremap <leader><space> :noh<cr>
 set background=dark
 
 " source config file form vim plugins
-so ~/.vim/plugins.vim
+so ~/dotfiles/vim/plugins.vim
 
