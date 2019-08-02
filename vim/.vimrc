@@ -72,6 +72,10 @@ set softtabstop=4
 set expandtab
 filetype plugin on
 filetype indent on
+au BufReadPost *.launch set syntax=xml
+au BufReadPost *.urdf set syntax=xml
+au BufReadPost *.sdf set syntax=xml
+au BufReadPost *.xacro set syntax=xml
 
 " Display tabs and trailing spaces visually
 " set list listchars=tab:\ \ ,trail:·
