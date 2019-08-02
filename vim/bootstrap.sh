@@ -31,7 +31,12 @@ INSTALLER="../install_package.sh"
 "${INSTALLER}" yarn
 "${INSTALLER}" ctags
 
-sudo ./install-ripgrep.sh
+if ! [ -x "$(command -v rg)" ]; then
+	echo "Installing ripgrep"
+	sudo ./install-ripgrep.sh
+else
+	echo "ripgrep already installed"
+fi
 
 vim -E -s -c "source ~/.vimrc" +PlugInstall +qall
 

@@ -45,11 +45,11 @@ set number
 set relativenumber
 
 " ================ Centralize meta files ==============
-silent !mkdir ~/dotfiles/vim/backups > /dev/null 2>&1
-silent !mkdir ~/dotfiles/vim/swaps > /dev/null 2>&1
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+silent !mkdir ~/.vim/swaps > /dev/null 2>&1
 
-set backupdir=~/dotfiles/vim/backups
-set directory=~/dotfiles/vim/swaps
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
 
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
@@ -57,8 +57,8 @@ set backupskip=/tmp/*,/private/tmp/*
 " ================ Persistent Undo ==================
 " Keep undo history across sessions by storing in file.
 if has('persistent_undo')
-  silent !mkdir ~/dotfiles/vim/undo > /dev/null 2>&1
-  set undodir=~/dotfiles/vim/undo
+  silent !mkdir ~/.vim/undo > /dev/null 2>&1
+  set undodir=~/.vim/undo
   set undofile
 endif
 

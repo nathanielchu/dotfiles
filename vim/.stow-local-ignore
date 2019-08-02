@@ -1,10 +1,5 @@
-autoload
-backups
+.gitignore
+bootstrap.sh
 install-ripgrep.sh
-pack
-plugged
 plugins.vim
 README.md
-swaps
-undo
-bootstrap.sh
