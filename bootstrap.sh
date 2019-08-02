@@ -32,6 +32,8 @@ fi
 __dir="$(cd "$(dirname "${BASH_SOURCE[${__b3bp_tmp_source_idx:-0}]}")" && pwd)"
 cd "${__dir}"
 
+./install_package.sh stow
+
 BOOTSTRAP="bootstrap.sh"
 for d in */ ; do
     package="$(basename ${d})"
