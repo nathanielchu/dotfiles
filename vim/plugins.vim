@@ -51,3 +51,10 @@ let g:ale_linters = {'python': [], 'cpp': ['clang'], 'java': [], 'yaml': [], 'sc
 let g:ale_lint_delay = 1000
 nmap ]a <Plug>(ale_next_wrap)
 nmap [a <Plug>(ale_previous_wrap)
+
+" gitgutter
+if exists('&signcolumn')  " Vim 7.4.2201
+    set signcolumn=yes
+else
+    let g:gitgutter_sign_column_always = 1
+endif
