@@ -11,6 +11,8 @@ set encoding=utf-8
 set hidden
 set ttyfast
 
+set clipboard=unnamedplus
+
 set backspace=indent,eol,start
 set history=1000
 set showcmd
