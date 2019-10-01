@@ -47,11 +47,11 @@ set number
 set relativenumber
 
 " ================ Centralize meta files ==============
-silent !mkdir ~/dotfiles/vim/backups > /dev/null 2>&1
-silent !mkdir ~/dotfiles/vim/swaps > /dev/null 2>&1
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+silent !mkdir ~/.vim/swaps > /dev/null 2>&1
 
-set backupdir=~/dotfiles/vim/backups
-set directory=~/dotfiles/vim/swaps
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
 
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
@@ -59,8 +59,8 @@ set backupskip=/tmp/*,/private/tmp/*
 " ================ Persistent Undo ==================
 " Keep undo history across sessions by storing in file.
 if has('persistent_undo')
-  silent !mkdir ~/dotfiles/vim/undo > /dev/null 2>&1
-  set undodir=~/dotfiles/vim/undo
+  silent !mkdir ~/.vim/undo > /dev/null 2>&1
+  set undodir=~/.vim/undo
   set undofile
 endif
 
@@ -74,6 +74,10 @@ set softtabstop=4
 set expandtab
 filetype plugin on
 filetype indent on
+au BufReadPost *.launch set syntax=xml
+au BufReadPost *.urdf set syntax=xml
+au BufReadPost *.sdf set syntax=xml
+au BufReadPost *.xacro set syntax=xml
 
 " Display tabs and trailing spaces visually
 " set list listchars=tab:\ \ ,trail:·
@@ -121,6 +125,30 @@ nnoremap <leader><space> :noh<cr>
 " ================ Aesthetics ===========================
 
 set background=dark
+
+" ================ Paste ===========================
+
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " source config file form vim plugins
 so ~/dotfiles/vim/plugins.vim
