@@ -9,6 +9,14 @@ git clone git@github.com:nathanielchu/dotfiles.git
 Clone the repository.
 
 ```shell
+./bootstrap.sh
+```
+
+Install necessary packages and create symlinks.
+
+### Stow
+
+```shell
 stow [package]
 ```
 
