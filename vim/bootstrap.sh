@@ -27,6 +27,7 @@ cd "${__dir}"
 
 INSTALLER="../install_package.sh"
 
+"${INSTALLER}" vim
 "${INSTALLER}" nodejs
 "${INSTALLER}" yarn
 "${INSTALLER}" ctags

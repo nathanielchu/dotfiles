@@ -25,6 +25,12 @@ touch "${LOCK_FILE}"
 __dir="$(cd "$(dirname "${BASH_SOURCE[${__b3bp_tmp_source_idx:-0}]}")" && pwd)"
 cd "${__dir}"
 
+INSTALLER="../install_package.sh"
+
+"${INSTALLER}" tmux
+
+tmux new-session -d
+tmux source ~/.tmux.conf
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 # ------------------------------------------------------------------
