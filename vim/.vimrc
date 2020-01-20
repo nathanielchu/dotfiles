@@ -74,6 +74,8 @@ set softtabstop=2
 set expandtab
 filetype plugin on
 filetype indent on
+
+" ================ File tyles  ======================
 au BufReadPost *.launch set syntax=xml
 au BufReadPost *.urdf set syntax=xml
 au BufReadPost *.sdf set syntax=xml
