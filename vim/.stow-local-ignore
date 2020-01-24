@@ -2,3 +2,4 @@ bootstrap.sh
 install-ripgrep.sh
 plugins.vim
 README.md
+.gitignore
