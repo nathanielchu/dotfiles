@@ -37,5 +37,7 @@ fi
 tmux new-session -d
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 tmux source ~/.tmux.conf
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+tmux source ~/.tmux.conf
 
 # ------------------------------------------------------------------
