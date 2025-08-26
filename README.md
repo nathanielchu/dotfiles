@@ -1,10 +1,11 @@
 # Dotfiles
 
 ## Installation
-
 ```shell
 git clone git@github.com:nathanielchu/dotfiles.git
 ```
+
+Recommended install location is ~/dotfiles
 
 Clone the repository.
 
