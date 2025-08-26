@@ -44,7 +44,6 @@ vnoremap . :norm.<CR>
 
 " ================ Gutter line numbers ====================
 set number
-set relativenumber
 
 " ================ Centralize meta files ==============
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
