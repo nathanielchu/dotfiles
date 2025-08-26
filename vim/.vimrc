@@ -18,7 +18,7 @@ set history=1000
 set showcmd
 set showmode
 set gcr=a:blinkon0              "Disable cursor blink
-set mouse=nvi                   "Enable mouse
+set mouse=a                     "Enable mouse
 set autoread                    "Reload files changed outside vim
 set laststatus=2
 set modelines=0

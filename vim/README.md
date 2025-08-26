@@ -18,7 +18,7 @@ Install the required plugin dependencies.
 ### Symlink .vimrc
 
 ```shell
-ln -sf ~/.vim/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
 ```
 
 Create a link to use this vimrc.
@@ -31,3 +31,7 @@ Then run the following in Vim:
 ```
 
 This installs the plugins in plugins.vim using vim-plug.
+
+### macOS
+
+To allow the use of the mouse, go to the View menu inside the Terminal application, and select "Allow mouse reporting".
