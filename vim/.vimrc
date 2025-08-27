@@ -151,6 +151,29 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
+" Special Functions:
+" When editing a file, make screen display the name of the file you are
+" editing
+" " Enabled by default. Either unlet variable or set to 0 in your .vimrc to
+" disable.
+let g:EnvImprovement_SetTitleEnabled = 1
+function! SetTitle()
+    if exists("g:EnvImprovement_SetTitleEnabled") && g:EnvImprovement_SetTitleEnabled && $TERM =~ "^screen"
+          let l:title = 'vi: ' . expand('%:t')
+
+              if (l:title != 'vi: __Tag_List__')
+                      let l:truncTitle = strpart(l:title, 0, 15)
+                            silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'
+                                endif
+                                  endif
+endfunction
+
+" Run it every time we change buffers
+autocmd BufEnter,BufFilePost * call SetTitle()
+
+
+" ================= Plugins =========================
+
 " source config file form vim plugins
 so ~/dotfiles/vim/plugins.vim
 
