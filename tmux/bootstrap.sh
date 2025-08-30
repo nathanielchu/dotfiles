@@ -29,6 +29,10 @@ INSTALLER="../install_package.sh"
 
 "${INSTALLER}" tmux
 
+# Install tmux-snazzy theme
+curl -o ~/.tmux.snazzy.theme https://raw.githubusercontent.com/ivnvxd/tmux-snazzy/main/.tmux.snazzy.theme
+
+# Install tmux plugin manager
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi

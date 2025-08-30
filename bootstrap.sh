@@ -32,6 +32,19 @@ fi
 __dir="$(cd "$(dirname "${BASH_SOURCE[${__b3bp_tmp_source_idx:-0}]}")" && pwd)"
 cd "${__dir}"
 
+# Detect operating system and install stow
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    OS="linux"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    OS="macos"
+else
+    echo "Unsupported operating system: $OSTYPE"
+    exit 1
+fi
+
+echo "Detected OS: ${OS}"
+
+# Install stow
 ./install_package.sh stow
 
 BOOTSTRAP="bootstrap.sh"
