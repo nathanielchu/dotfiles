@@ -1,5 +1,21 @@
 # Dotfiles
 
+## Setup
+```shell
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+cat ~/.ssh/id_ed25519.pub
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+ssh -T git@github.com
+```
+
+Use `~/.ssh/config` to manage keys:
+```shell
+Host github.com
+AddKeysToAgent yes
+IdentityFile ~/.ssh/id_ed25519
+```
+
 ## Installation
 ```shell
 git clone git@github.com:nathanielchu/dotfiles.git
