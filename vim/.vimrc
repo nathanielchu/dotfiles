@@ -27,7 +27,7 @@ set pastetoggle=<F2>
 set display+=lastline           "Display as much of last line as possible
 set wrap
 set linebreak
-set formatoptions=qrn1
+set formatoptions=qn1
 set ruler
 " set colorcolumn=80
 " set visualbell
