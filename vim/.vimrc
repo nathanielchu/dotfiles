@@ -36,7 +36,7 @@ set ruler
 " ================ Mappings ====================
 
 let mapleader = ","
-inoremap jk <ESC>
+" inoremap jk <ESC>
 " Tab to move to associated (), {}, []
 nnoremap <tab> %
 vnoremap <tab> %
